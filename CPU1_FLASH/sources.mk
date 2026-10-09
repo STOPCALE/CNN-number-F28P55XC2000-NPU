@@ -119,5 +119,9 @@ GEN_OPTS__QUOTED :=
 # Every subdirectory with source files must be described here
 SUBDIRS := \
 . \
+_backup_charge_mtl \
+_backup_mnist_base \
+_backup_mnist_lean \
+artifacts \
 device \
 

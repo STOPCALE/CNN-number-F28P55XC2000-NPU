@@ -20,10 +20,10 @@ MEMORY
    // RAMLS8_CLA    : origin = 0x004000, length = 0x002000  // Use only if configured as CLA program memory
    // RAMLS9_CLA    : origin = 0x006000, length = 0x002000  // Use only if configured as CLA program memory
 
-   RAMGS0           : origin = 0x00C000, length = 0x002000
-   RAMGS1           : origin = 0x00E000, length = 0x002000
-   RAMGS2           : origin = 0x010000, length = 0x002000
-   RAMGS3           : origin = 0x012000, length = 0x002000
+   /* GS0..GS3 are four physically contiguous 8KB banks (0x00C000..0x013FFF, 32KB).
+    * The CNN NPU workspace (.bss.noinit.tvm ~25.5KB) needs one contiguous GS block,
+    * so merge them into a single region (same idea as C2000Ware arc_fault RAMGS012). */
+   RAMGS0123        : origin = 0x00C000, length = 0x008000
 
    /* Flash Banks (128 sectors each) */
    FLASH_BANK0     : origin = 0x080002, length = 0x1FFFE
@@ -52,7 +52,7 @@ SECTIONS
 
    .stack           : > RAMM1
 #if defined(__TI_EABI__)
-   .bss             : > RAMLS5
+   .bss             : > RAMLS8        /* widened for CNN main globals (input buf 4KB+) */
    .bss:output      : > RAMLS3
    .init_array      : > FLASH_BANK0, ALIGN(8)
    .const           : > FLASH_BANK0, ALIGN(8)
@@ -65,13 +65,11 @@ SECTIONS
    .esysmem         : > RAMLS5
 #endif
 
-   ramgs0 : > RAMGS0
-   ramgs1 : > RAMGS1
-   ramgs2 : > RAMGS2
+   /* (legacy ramgs0/1/2 sections removed: only used by unbuilt saw2sin hand_infer.c) */
 
    /* TI NPU (TINIE) model sections - referenced by artifacts/mod.a */
    .rodata.tvm      : > FLASH_BANK0, ALIGN(8)
-   .bss.noinit.tvm  : > RAMGS3
+   .bss.noinit.tvm  : > RAMGS0123, ALIGN(8)
 
    #if defined(__TI_EABI__)
        .TI.ramfunc : {} LOAD = FLASH_BANK0,
