@@ -1,0 +1,90 @@
+{
+  "ccs_header": "E:\\desk\\CCS\\cnn_and_number\\golden_mnist.h",
+  "n_samples": 12,
+  "samples": [
+    {
+      "k": 0,
+      "test_idx": 136,
+      "true": 0,
+      "expect": 0,
+      "margin": 20.60521697998047
+    },
+    {
+      "k": 1,
+      "test_idx": 9705,
+      "true": 1,
+      "expect": 1,
+      "margin": 16.133560180664062
+    },
+    {
+      "k": 2,
+      "test_idx": 2503,
+      "true": 2,
+      "expect": 2,
+      "margin": 21.317304611206055
+    },
+    {
+      "k": 3,
+      "test_idx": 9083,
+      "true": 3,
+      "expect": 3,
+      "margin": 22.170137405395508
+    },
+    {
+      "k": 4,
+      "test_idx": 6396,
+      "true": 4,
+      "expect": 4,
+      "margin": 22.247270584106445
+    },
+    {
+      "k": 5,
+      "test_idx": 3295,
+      "true": 5,
+      "expect": 5,
+      "margin": 20.507469177246094
+    },
+    {
+      "k": 6,
+      "test_idx": 9306,
+      "true": 6,
+      "expect": 6,
+      "margin": 22.182374954223633
+    },
+    {
+      "k": 7,
+      "test_idx": 4781,
+      "true": 7,
+      "expect": 7,
+      "margin": 20.217124938964844
+    },
+    {
+      "k": 8,
+      "test_idx": 458,
+      "true": 8,
+      "expect": 8,
+      "margin": 18.752573013305664
+    },
+    {
+      "k": 9,
+      "test_idx": 8680,
+      "true": 9,
+      "expect": 9,
+      "margin": 16.961658477783203
+    },
+    {
+      "k": 10,
+      "test_idx": 4680,
+      "true": 6,
+      "expect": 6,
+      "margin": 21.923831939697266
+    },
+    {
+      "k": 11,
+      "test_idx": 9317,
+      "true": 6,
+      "expect": 6,
+      "margin": 21.755413055419922
+    }
+  ]
+}

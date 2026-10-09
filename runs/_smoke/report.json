@@ -1,0 +1,10 @@
+{
+  "best_test_acc": 0.3872,
+  "best_epoch": 1,
+  "final_test_acc": 0.3872,
+  "params": 47530,
+  "device": "cuda",
+  "epochs": 1,
+  "minutes": 0.03,
+  "out_dir": "runs/_smoke"
+}

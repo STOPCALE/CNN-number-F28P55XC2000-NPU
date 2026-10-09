@@ -1,0 +1,5 @@
+# 数据缓存 (可重新下载, 体积大)
+data/
+# Python 缓存
+__pycache__/
+*.pyc

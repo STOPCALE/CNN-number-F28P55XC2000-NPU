@@ -1,0 +1,10 @@
+{
+  "best_test_acc": 0.9859,
+  "best_epoch": 12,
+  "final_test_acc": 0.9843,
+  "params": 20666,
+  "device": "cuda",
+  "epochs": 15,
+  "minutes": 0.67,
+  "out_dir": "runs/lean"
+}
